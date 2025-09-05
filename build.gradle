@@ -1,0 +1,20 @@
+plugins {
+    id 'maven-publish'
+}
+
+group = "com.github.rcycjack"  // JitPack 会用这个 groupId
+version = "3.1.9"              // 发布版本，对应 GitHub tag
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = group
+            artifactId = "huq"        // 依赖里的名字
+            version = version
+
+            artifact("libs/sourcekit-3.1.9.aar") {
+                extension "aar"
+            }
+        }
+    }
+}
