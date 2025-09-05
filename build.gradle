@@ -18,3 +18,9 @@ publishing {
         }
     }
 }
+
+tasks.register("assemble") {
+    doLast {
+        println("Dummy assemble task - nothing to build")
+    }
+}
